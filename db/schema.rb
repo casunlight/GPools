@@ -11,17 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121121181711) do
+ActiveRecord::Schema.define(:version => 20121121190215) do
 
   create_table "pools", :force => true do |t|
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.string   "title"
     t.float    "latitude"
-    t.float    "longititude"
+    t.float    "longitude"
     t.string   "address"
-    t.string   "type"
+    t.string   "ind_out"
     t.string   "size"
+    t.boolean  "gmaps"
   end
 
 end
