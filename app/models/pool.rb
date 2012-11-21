@@ -5,7 +5,7 @@ class Pool < ActiveRecord::Base
    acts_as_gmappable
 
    def description
-    "#{self.title} \n #{self.address} \n #{self.ind_out} \n #{self.size}"
+   "#{self.title} #{self.address} #{self.ind_out} #{self.size}"
    end
 
 end

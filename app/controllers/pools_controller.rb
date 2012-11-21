@@ -3,7 +3,11 @@ class PoolsController < ApplicationController
   # GET /pools.json
   def index
     @pools = Pool.all
-    @markers = @pools.collect {|p| {:lng => p.longitude, :lat => p.latitude, :title => p.title, :description => p.description}}.to_json
+    @markers = @pools.to_gmaps4rails do |pool|
+      "\"title\": \"#{pool.title}\",\"description\": \"#{pool.description}\"" 
+    end 
+
+    #@pools.collect {|p| {:lng => p.longitude, :lat => p.latitude, :title => p.title, :description => p.description}}.to_json
 
     respond_to do |format|
       format.html # index.html.erb
