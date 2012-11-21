@@ -1,4 +1,6 @@
 GPool::Application.routes.draw do
+  resources :pools
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
